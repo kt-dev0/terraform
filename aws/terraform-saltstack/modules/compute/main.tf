@@ -52,7 +52,7 @@ resource "aws_eip" "salt_eip" {
 
 resource "aws_instance" "salt_minion" {
   depends_on = [aws_instance.salt_server]
-  ami = "ami-09d3b3274b6c5d4aa"
+  ami = "ami-0c5a1c466350aa024" #"ami-09d3b3274b6c5d4aa"
   subnet_id = var.public_subnet
   instance_type = "t2.micro"
   vpc_security_group_ids = [var.security_group]
