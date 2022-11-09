@@ -6,5 +6,3 @@ sudo yum install salt-minion -y
 sudo systemctl enable salt-minion && sudo systemctl start salt-minion
 sudo touch /etc/salt/minion.d/minion.conf && sudo echo "master: 10.10.1.234" > /etc/salt/minion.d/minion.conf
 sudo systemctl restart salt-minion
-sudo yum update -y
-sudo reboot --force
