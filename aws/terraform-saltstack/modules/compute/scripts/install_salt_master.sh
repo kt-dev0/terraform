@@ -10,4 +10,11 @@ sudo systemctl enable salt-api && sudo systemctl start salt-api
 sudo hostnamectl set-hostname aws-saltmaster
 sudo touch /etc/salt/minion.d/minion.conf && sudo echo "master: localhost" > /etc/salt/minion.d/minion.conf
 sudo touch /etc/salt/master.d/master.conf && sudo echo "auto_accept: True" > /etc/salt/master.d/master.conf
+sudo mkdir /srv/salt
+#install Application (postgresql)
+sudo yum install postgresql-server
+su - postgres -c '/bin/initdb -D /var/lib/pgsql/data'
+sudo systemctl restart postgresql
+su - postgres -c 'createdb -O postgres mydb'
+#################################################################################
 sudo systemctl restart salt-master && sudo systemctl restart salt-minion
