@@ -10,6 +10,7 @@ crash.log
 
 # CLI configuration files
 .terraform.lock.hcl
+.terraform.tfstate.lock.info
 
 # Ignore tfplan files (execution plans)
 *.tfplan
