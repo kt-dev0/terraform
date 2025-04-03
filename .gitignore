@@ -28,3 +28,7 @@ override.tf.json
 .vscode/
 .idea/
 .DS_Store
+
+# Ignore any SSH keys
+*.pem
+*.pub
